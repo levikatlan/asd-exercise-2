@@ -11,11 +11,11 @@ def trace(log):
 
         def wrapper(*args, **kwargs):
             nonlocal padding_length
-            log(f'{" " * padding_length}enter {f.__name__}({format_args(args, kwargs)})\n')
+            log(f'{" " * padding_length}enter {f.__name__}({format_args(args, kwargs)})')
             padding_length += 1
             result = f(*args, **kwargs)
             padding_length -= 1
-            log(f'{" " * padding_length}leave {f.__name__}({format_args(args, kwargs)}): {result}\n')
+            log(f'{" " * padding_length}leave {f.__name__}({format_args(args, kwargs)}): {result}')
             return result
 
         return wrapper
